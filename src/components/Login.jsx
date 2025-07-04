@@ -1,8 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { backendUrl } from '../App'
+// import { backendUrl } from '../App'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+
+const API_BASE = import.meta.env.REACT_APP_API_URL;
+
 
 const Login = ({setToken}) => {
 
@@ -12,7 +15,7 @@ const Login = ({setToken}) => {
   const onSubmitHandler = async (e) => {
     try {
         e.preventDefault()
-        const response = await axios.post(backendUrl + '/api/user/admin', {email, password})
+        const response = await axios.post(`${API_BASE}/api/user/admin`, { email, password })
         if (response.data.success){
             setToken(response.data.token)
 

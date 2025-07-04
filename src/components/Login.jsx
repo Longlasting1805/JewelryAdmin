@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
-const API_BASE = import.meta.env.REACT_APP_API_URL;
+const API_BASE = import.meta.env.VITE_APP_API_URL;
 
 
 const Login = ({setToken}) => {
